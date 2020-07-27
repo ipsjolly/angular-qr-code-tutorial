@@ -1,0 +1,43 @@
+<h2>Generate QR-Code in Angular Application</h2>
+<div class="flexContainer">
+  <div>
+    <div>
+      <div>qrdata: {{ qrdata }}</div>
+      <div>level: {{ level }}</div>
+      <div>width: {{ width }}</div>
+    </div>
+    <div>
+      <qr-code [value]="qrdata" [size]="width" [level]="level"></qr-code>
+    </div>
+  </div>
+
+  <div>
+    <h3>Change Values</h3>
+
+    <h4>QR-Code Data:</h4>
+    <button (click)="changeQrdata('Bruce')">Set "Bruce"</button>
+    <button (click)="changeQrdata('Peter Parker')">
+      Set "Peter Parker"
+    </button>
+    <button (click)="changeQrdata('42')">Set "42"</button>
+    <br />
+    <br />
+    <label>
+      or type to change: <input [(ngModel)]="qrdata" placeholder="name" />
+    </label>
+
+    <h4>Change Level</h4>
+    <button (click)="changeLevel('L')">L</button>
+    <button (click)="changeLevel('M')">M</button>
+    <button (click)="changeLevel('Q')">Q</button>
+    <button (click)="changeLevel('H')">H</button>
+
+    <h4>Change Width</h4>
+    <button (click)="changeWidth(512)">512</button>
+    <button (click)="changeWidth(256)">256</button>
+    <button (click)="changeWidth(128)">128</button>
+    <button (click)="changeWidth(128)">64</button>
+    <button (click)="changeWidth(10)">10</button>
+
+  </div>
+</div>
